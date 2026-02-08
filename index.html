@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>For Aleenu </title>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Montserrat:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+    --gold-primary: #b8892e;
+    --gold-accent: #c59d5f;
+    --gold-light: #e6c77d;
+    --text-main: #4a3a20;
+    --bg-gradient: linear-gradient(-45deg, #fff7e6, #ffe7b3, #f7d27a, #fff1cc);
+    --emoji-font: "Montserrat", "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif;
+}
+
+body {
+    margin: 0;
+    font-family: var(--emoji-font);
+    color: var(--text-main);
+    overflow-x: hidden;
+    background: var(--bg-gradient);
+    background-size: 400% 400%;
+    animation: luxury-bg 20s ease infinite;
+}
+
+@keyframes luxury-bg {
+    0% { background-position: 0% 50% }
+    50% { background-position: 100% 50% }
+    100% { background-position: 0% 50% }
+}
+
+.center { height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
+
+.glass-card {
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    padding: 3rem;
+    border-radius: 30px;
+    box-shadow: 0 15px 35px rgba(184, 137, 46, 0.2);
+    z-index: 10000;
+}
+
+h1, .end-sig { font-family: 'Pacifico', cursive; color: var(--gold-primary); }
+h1 { font-size: 3.5rem; margin-bottom: 0.5rem; }
+
+.highlight { color: var(--gold-primary); font-weight: 700; }
+
+button {
+    padding: 15px 40px;
+    border: none;
+    border-radius: 50px;
+    background: linear-gradient(135deg, var(--gold-accent), var(--gold-primary));
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(184, 137, 46, 0.4);
+    z-index: 10001;
+}
+
+.hidden { display: none; }
+.typing { font-size: 22px; max-width: 750px; line-height: 1.8; padding: 30px; background: rgba(255, 255, 255, 0.5); border-radius: 20px; }
+
+.gallery { position: relative; height: 100vh; width: 100vw; overflow: hidden; }
+.polaroid {
+    position: absolute;
+    width: 150px; /* Made slightly smaller to fit 12 photos better */
+    background: #fff;
+    padding: 10px 10px 20px 10px;
+    border-radius: 2px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    transform: rotate(var(--r));
+    animation: drop .8s ease forwards;
+}
+.polaroid img { width: 100%; height: 150px; object-fit: cover; }
+.caption { font-size: 12px; margin-top: 8px; text-align: center; font-family: 'Montserrat', sans-serif; }
+
+@keyframes drop {
+    from { opacity: 0; transform: translateY(-150px) rotate(var(--r)); }
+    to { opacity: 1; transform: translateY(0) rotate(var(--r)); }
+}
+
+.letter-container { padding: 50px 20px; max-width: 800px; margin: auto; overflow-y: auto; height: 90vh; }
+.letter-content {
+    background: #fffcf5;
+    background-image: radial-gradient(#f0eada 1px, transparent 1px);
+    background-size: 20px 20px;
+    padding: 50px;
+    border-radius: 10px;
+    font-size: 18px;
+    line-height: 2;
+    box-shadow: 0 20px 50px rgba(184, 137, 46, 0.15);
+}
+
+.heart-pop {
+    position: fixed;
+    font-size: 2.5rem;
+    pointer-events: none;
+    animation: flyUp 1.2s ease-out forwards;
+    z-index: 11000;
+}
+@keyframes flyUp {
+    0% { transform: translateY(0) scale(1); opacity: 1; }
+    100% { transform: translateY(-200px) scale(1.5); opacity: 0; }
+}
+</style>
+</head>
+<body onclick="createHeart(event)">
+
+<audio id="bgm" src="song.mp3" loop preload="auto"></audio>
+
+<div id="intro" class="center">
+    <div class="glass-card">
+        <h1>Hi Aleenu! </h1>
+        <p style="font-weight: 300; letter-spacing: 2px;">Tap to enter your 16th level celebration</p>
+        <button onclick="startExperience()">Enter Experience </button>
+    </div>
+</div>
+
+<div id="story" class="center hidden">
+    <div id="text" class="typing"></div>
+</div>
+
+<div id="memories" class="gallery hidden"></div>
+
+<div id="letter" class="hidden">
+    <div class="letter-container">
+        <div class="letter-content">
+            Hii <span class="highlight">aleenuu</span> it's your birthday happy birthday to you aleenaa  <br><br>
+            My best friend, you supported me in every situation thank you for that—a big thank you for that really. I swear to god you are the <span class="highlight">kindest soul</span> i ever met. You never judged me, you never disrespect mee (unless that gayy allegations ).<br><br>
+            Yeahh sooo it's your birthday! Last time I forgot your birthday and didn't wish you at 12 ammmm cuz it's called efforts, but this timee i willlll! <br><br>
+            Soo yeahh enjoy your day, enjoy this with your friends, enjoy this with your family, enjoy this with mee, with everyone! And please take care of yourself. Don't give a fuck about your teachers okk?? Fuck them, in the end they are just <span class="highlight">NPCs</span> you are the <span class="highlight">main character</span>.<br><br>
+            Soo yeahh i can't give you anything but take this birthday wish from me—this is the only thing I can do rn cuz I'm an online friend. I always wish to goo for a dinner party with you and hope this will happen.<br><br>
+            And Yeahh <span class="highlight">pray all the namaz</span>, don't leave them okk?? Cuz it's now farz for you. <br><br>
+            Soo yeah it's your birthdayyyyyyyyy happy birthday aleenuuuuuu and sorry for everything  I will always regret for that yk what Im talking about I'm sorry ahhh yeah soo where I was? <br><br>
+            Yeah it's your <span class="highlight">16th birthday</span>, your 16th level on this earth! <br><br>
+            Just this... it's your <span class="highlight">mallick hereee</span> wishing you a very very happy birthday girlyyyyy!
+            <div class="end-sig">Happy 16th, Aleena! </div>
+        </div>
+    </div>
+</div>
+
+<script>
+const message = "Ok listen… before cake, before wishes, before drama — I saved some moments here for you  Ready? Don’t laugh too much.";
+let i = 0;
+
+function type() {
+    if (i < message.length) {
+        document.getElementById('text').innerHTML += message.charAt(i);
+        i++;
+        setTimeout(type, 50);
+    } else {
+        setTimeout(showMemories, 2500);
+    }
+}
+
+function startExperience() {
+    const audio = document.getElementById('bgm');
+    audio.play().catch(e => console.log("Audio play deferred"));
+    document.getElementById('intro').classList.add('hidden');
+    document.getElementById('story').classList.remove('hidden');
+    type();
+}
+
+// 12 PHOTOS ADDED HERE
+const images = [
+    ['image1.jpg', 'Moment 1 '],
+    ['image2.jpg', 'Level 16 Unlocked'],
+    ['image3.jpg', 'The Bestie '],
+    ['image4.jpg', 'Main Character Energy'],
+    ['image5.jpg', 'Kindest Soul '],
+    ['image6.jpg', 'Total Vibe '],
+    ['image7.jpg', 'Stay Iconic '],
+    ['image8.jpg', 'Memories '],
+    ['image9.jpg', 'Girlyyy '],
+    ['image10.jpg', 'No NPCs allowed '],
+    ['image11.jpg', 'The Era '],
+    ['image12.jpg', 'Always You! ']
+];
+
+function showMemories() {
+    document.getElementById('story').classList.add('hidden');
+    const g = document.getElementById('memories');
+    g.classList.remove('hidden');
+    
+    images.forEach((img, index) => {
+        setTimeout(() => {
+            const div = document.createElement('div');
+            div.className = 'polaroid';
+            div.style.setProperty('--r', Math.random() * 20 - 10 + 'deg');
+            // Scatter logic adjusted for 12 photos
+            div.style.left = Math.random() * 75 + 5 + '%';
+            div.style.top = Math.random() * 70 + 5 + '%';
+            div.innerHTML = `<img src='${img[0]}'><div class='caption'>${img[1]}</div>`;
+            g.appendChild(div);
+            // Wait longer before showing letter so she can see all 12 pics
+            if (index === images.length - 1) setTimeout(showLetter, 6000);
+        }, 800 * index); // Slightly faster drop so 12 photos don't take forever
+    });
+}
+
+function showLetter() {
+    document.getElementById('memories').classList.add('hidden');
+    document.getElementById('letter').classList.remove('hidden');
+}
+
+function createHeart(e) {
+    const heart = document.createElement('div');
+    heart.className = 'heart-pop';
+    heart.innerHTML = '';
+    heart.style.left = e.clientX + 'px';
+    heart.style.top = e.clientY + 'px';
+    document.body.appendChild(heart);
+    setTimeout(() => { heart.remove(); }, 1200);
+}
+</script>
+</body>
+</html>
